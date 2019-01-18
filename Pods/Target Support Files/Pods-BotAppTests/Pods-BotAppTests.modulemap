@@ -1,0 +1,6 @@
+framework module Pods_BotAppTests {
+  umbrella header "Pods-BotAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
