@@ -131,6 +131,11 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
         sendQuestion(url: "query", pam: parameters)
         return true
     }
+    
+    @IBAction func goToPage(_ sender: Any) {
+        print("i'm getting angry")
+    }
+    
 }
 
 extension UIViewController {
