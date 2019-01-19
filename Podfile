@@ -9,6 +9,7 @@ target 'BotApp' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'AlamofireImage'
+  pod 'Keyboardy'
 
   target 'BotAppTests' do
     inherit! :search_paths

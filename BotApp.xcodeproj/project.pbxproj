@@ -10,12 +10,15 @@
 		19A8E8E0EA8EFF54B7C22A75 /* Pods_BotAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBB03EC145E938DE6BD3F2D4 /* Pods_BotAppTests.framework */; };
 		273F66EA79A8EF172AD5BB23 /* Pods_BotAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C689627FEDE31D38CE95A2 /* Pods_BotAppUITests.framework */; };
 		894751BF21F2977F009F1039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894751BE21F2977F009F1039 /* AppDelegate.swift */; };
-		894751C121F2977F009F1039 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894751C021F2977F009F1039 /* ViewController.swift */; };
 		894751C421F2977F009F1039 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894751C221F2977F009F1039 /* Main.storyboard */; };
 		894751C621F29782009F1039 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 894751C521F29782009F1039 /* Assets.xcassets */; };
 		894751C921F29782009F1039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894751C721F29782009F1039 /* LaunchScreen.storyboard */; };
 		894751D421F29783009F1039 /* BotAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894751D321F29783009F1039 /* BotAppTests.swift */; };
 		894751DF21F29783009F1039 /* BotAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894751DE21F29783009F1039 /* BotAppUITests.swift */; };
+		89B592A821F376D1003EE686 /* BotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B592A721F376D1003EE686 /* BotCollectionViewCell.swift */; };
+		89B592AA21F3819B003EE686 /* StandardBotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B592A921F3819B003EE686 /* StandardBotCollectionViewCell.swift */; };
+		89B6443921F3633100043966 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6443821F3633100043966 /* MessageCollectionViewCell.swift */; };
+		89B6443B21F3647C00043966 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6443A21F3647C00043966 /* ChatViewController.swift */; };
 		E5D89CD6C5740FA28F4158A2 /* Pods_BotApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ABCF99F6228FF501564F16 /* Pods_BotApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +44,6 @@
 		74ABCF99F6228FF501564F16 /* Pods_BotApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BotApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		894751BB21F2977F009F1039 /* BotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		894751BE21F2977F009F1039 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		894751C021F2977F009F1039 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		894751C321F2977F009F1039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		894751C521F29782009F1039 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		894751C821F29782009F1039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +54,10 @@
 		894751DA21F29783009F1039 /* BotAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BotAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		894751DE21F29783009F1039 /* BotAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotAppUITests.swift; sourceTree = "<group>"; };
 		894751E021F29783009F1039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89B592A721F376D1003EE686 /* BotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotCollectionViewCell.swift; sourceTree = "<group>"; };
+		89B592A921F3819B003EE686 /* StandardBotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardBotCollectionViewCell.swift; sourceTree = "<group>"; };
+		89B6443821F3633100043966 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		89B6443A21F3647C00043966 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		983B400168EA8582E8E4CC20 /* Pods-BotAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BotAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BotAppUITests/Pods-BotAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A54F64C3DD5051B845357B1A /* Pods-BotApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BotApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BotApp/Pods-BotApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BBB03EC145E938DE6BD3F2D4 /* Pods_BotAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BotAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +131,10 @@
 			isa = PBXGroup;
 			children = (
 				894751BE21F2977F009F1039 /* AppDelegate.swift */,
-				894751C021F2977F009F1039 /* ViewController.swift */,
+				89B6443A21F3647C00043966 /* ChatViewController.swift */,
+				89B592A921F3819B003EE686 /* StandardBotCollectionViewCell.swift */,
+				89B592A721F376D1003EE686 /* BotCollectionViewCell.swift */,
+				89B6443821F3633100043966 /* MessageCollectionViewCell.swift */,
 				894751C221F2977F009F1039 /* Main.storyboard */,
 				894751C521F29782009F1039 /* Assets.xcassets */,
 				894751C721F29782009F1039 /* LaunchScreen.storyboard */,
@@ -307,6 +316,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-BotApp/Pods-BotApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Keyboardy/Keyboardy.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -315,6 +325,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keyboardy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,8 +406,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				894751C121F2977F009F1039 /* ViewController.swift in Sources */,
 				894751BF21F2977F009F1039 /* AppDelegate.swift in Sources */,
+				89B6443B21F3647C00043966 /* ChatViewController.swift in Sources */,
+				89B592A821F376D1003EE686 /* BotCollectionViewCell.swift in Sources */,
+				89B592AA21F3819B003EE686 /* StandardBotCollectionViewCell.swift in Sources */,
+				89B6443921F3633100043966 /* MessageCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

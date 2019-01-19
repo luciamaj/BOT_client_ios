@@ -2,24 +2,28 @@ PODS:
   - Alamofire (4.8.1)
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
+  - Keyboardy (0.2.5)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - Keyboardy
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
+    - Keyboardy
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
+  Keyboardy: 173a36394f540f38c20c6f5257c320c98e1716e0
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: d2ee2cf865e4eae5a42461644b4c218813ff771c
+PODFILE CHECKSUM: df5d7f502fcb9b9dc4c91b3fd6942263d603c274
 
 COCOAPODS: 1.5.3
