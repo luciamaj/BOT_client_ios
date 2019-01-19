@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Keyboardy
+import SDWebImage
+import IHKeyboardAvoiding
 
 class ChatViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
     
@@ -19,24 +21,24 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     var typeOfAnswers = [Int]()
     var answersArray = [String]()
-    var myQuestion : Bool = false
     
     enum typeOfAnswer : String {
         case angry = "You seem angry"
         case what = "I didn't get it"
     }
     
+    var urlImg : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         textField.autocorrectionType = .no
         
         self.hideKeyboardWhenTappedAround()
         self.textField.delegate = self
+        KeyboardAvoiding.avoidingView = self.view
     }
     
     public func sendQuestion(url: String, pam: Parameters) {
@@ -46,7 +48,6 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         Alamofire.request("http://localhost:8000/api/" + url, method: .post, parameters: pam).responseJSON { response in
             response.result.ifSuccess {
-                self.myQuestion = false
                 let json = JSON(response.result.value!)
                 sleep(1)
                 if (json["content"] == "error") {
@@ -60,7 +61,10 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     self.collectionView.reloadData()
                 }
                 else {
-                    print("normal response")
+                    self.typeOfAnswers.append(1)
+                    self.answersArray.append(json["content"].stringValue)
+                    self.urlImg = json["filename"].stringValue
+                    self.collectionView.reloadData()
                 }
             }
             if response.result.isFailure == true {
@@ -85,7 +89,17 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.colorView.layer.cornerRadius = 10
             
             return cell
+        case 1:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellBot", for: indexPath) as! BotCollectionViewCell
+            
+            cell.colorView.layer.cornerRadius = 10
+            cell.labelMsg.text = answersArray[indexPath.row]
+            
+            cell.codeImg.sd_setImage(with: URL(string: "http://localhost:8000/uploads/" + urlImg), placeholderImage: UIImage(named: "placeholder"))
+            
+            return cell
         case 2:
+            print()
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "standardCellBot", for: indexPath) as! StandardBotCollectionViewCell
             
             cell.labelMsg.text = answersArray[indexPath.row]
@@ -102,21 +116,6 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         
@@ -129,7 +128,6 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
         typeOfAnswers.append(0)
         answersArray.append(content)
         collectionView.reloadData()
-        self.myQuestion = true
         sendQuestion(url: "query", pam: parameters)
         return true
     }

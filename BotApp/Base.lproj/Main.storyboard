@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iCh-cC-mZ2">
-                                <rect key="frame" x="0.0" y="51" width="375" height="592"/>
+                                <rect key="frame" x="0.0" y="51" width="375" height="572"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dei-tF-ckA">
                                     <size key="itemSize" width="375" height="80"/>
@@ -159,7 +159,7 @@
                                 </cells>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ask Something..." textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="xKp-9h-USt">
-                                <rect key="frame" x="30" y="623" width="321" height="24"/>
+                                <rect key="frame" x="27" y="614" width="321" height="24"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -168,14 +168,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xKp-9h-USt" firstAttribute="leading" secondItem="QV4-yZ-Tg0" secondAttribute="leading" constant="30" id="Cy4-BB-3Yc"/>
-                            <constraint firstItem="xKp-9h-USt" firstAttribute="trailing" secondItem="QV4-yZ-Tg0" secondAttribute="trailing" constant="-24" id="Ic4-XM-hX1"/>
+                            <constraint firstItem="xKp-9h-USt" firstAttribute="leading" secondItem="QV4-yZ-Tg0" secondAttribute="leading" constant="27" id="Cy4-BB-3Yc"/>
+                            <constraint firstItem="xKp-9h-USt" firstAttribute="trailing" secondItem="QV4-yZ-Tg0" secondAttribute="trailing" constant="-27" id="Ic4-XM-hX1"/>
+                            <constraint firstItem="xKp-9h-USt" firstAttribute="top" secondItem="iCh-cC-mZ2" secondAttribute="bottom" constant="-9" id="VwS-xP-KwW"/>
                             <constraint firstItem="iCh-cC-mZ2" firstAttribute="leading" secondItem="QV4-yZ-Tg0" secondAttribute="leading" id="YiD-7u-nGV"/>
-                            <constraint firstItem="xKp-9h-USt" firstAttribute="top" secondItem="iCh-cC-mZ2" secondAttribute="bottom" constant="-20" id="aL6-UN-WcT"/>
-                            <constraint firstItem="xKp-9h-USt" firstAttribute="top" secondItem="iCh-cC-mZ2" secondAttribute="bottom" constant="-20" id="k9a-2l-KLF"/>
                             <constraint firstItem="iCh-cC-mZ2" firstAttribute="top" secondItem="QV4-yZ-Tg0" secondAttribute="top" constant="31" id="oUO-qr-b1e"/>
                             <constraint firstItem="iCh-cC-mZ2" firstAttribute="trailing" secondItem="QV4-yZ-Tg0" secondAttribute="trailing" id="tSc-D6-UeM"/>
-                            <constraint firstItem="xKp-9h-USt" firstAttribute="bottom" secondItem="QV4-yZ-Tg0" secondAttribute="bottom" constant="-20" id="xmX-47-xpn"/>
+                            <constraint firstItem="xKp-9h-USt" firstAttribute="bottom" secondItem="QV4-yZ-Tg0" secondAttribute="bottom" constant="-29" id="xmX-47-xpn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QV4-yZ-Tg0"/>
                     </view>
