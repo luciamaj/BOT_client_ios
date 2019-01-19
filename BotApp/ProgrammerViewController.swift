@@ -13,8 +13,10 @@ import IHKeyboardAvoiding
 
 class ProgrammerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
     
-    var typeOfAnswers = [1, 0, 1]
-    var answersArray = ["ciao!", "heila!", "di cosa hai bisogno)"]
+    var typeOfAnswers = [Int]()
+    var answersArray = [String]()
+    var timer = Timer()
+    var latest = ""
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -29,8 +31,9 @@ class ProgrammerViewController: UIViewController, UICollectionViewDelegate, UICo
         self.hideKeyboardWhenTappedAround()
         self.textField.delegate = self
         KeyboardAvoiding.avoidingView = self.view
-        
-        self.collectionView.reloadData()
+        getMessages(url: "last-question")
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounting), userInfo: nil, repeats: true)
+        timer.fire()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -42,17 +45,56 @@ class ProgrammerViewController: UIViewController, UICollectionViewDelegate, UICo
         switch typeOfAnswers[indexPath.row] {
             
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "programmerCell", for: indexPath) as! ProgrammerCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MessageCollectionViewCell
+            cell.colorView.layer.cornerRadius = 10
             
             return cell
         case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MessageCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "programmerCell", for: indexPath) as! ProgrammerCollectionViewCell
+            cell.colorView.layer.cornerRadius = 10
             
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MessageCollectionViewCell
+            cell.colorView.layer.cornerRadius = 10
             
             return cell
+        }
+    }
+    
+    @objc func updateCounting(){
+        getMessages(url: "last-question")
+    }
+    
+    func getMessages(url: String) {
+        Alamofire.request("http://localhost:8000/api/" + url, method: .post).responseJSON { response in
+            response.result.ifSuccess {
+                let json = JSON(response.result.value!)
+                if(json["created_at"].stringValue != self.latest && json["is_dev"].intValue == 1) {
+                    self.latest = json["created_at"].stringValue
+                    
+                    self.typeOfAnswers.append(json["is_dev"].intValue)
+                    self.answersArray.append(json["content"].stringValue)
+                    self.collectionView.reloadData()
+                }
+            }
+            if response.result.isFailure == true {
+                print("URL", "http://localhost:8000/api/" + url)
+                print(response)
+            }
+        }
+    }
+    
+    func saveQuestion(pam: Parameters, url: String) {
+        Alamofire.request("http://localhost:8000/api/" + url, method: .post).responseJSON { response in
+            response.result.ifSuccess {
+                let json = JSON(response.result.value!)
+                print(json)
+            }
+            if response.result.isFailure == true {
+                print("URL", "http://localhost:8000/api/" + url)
+                print(response)
+            }
         }
     }
     
@@ -65,8 +107,14 @@ class ProgrammerViewController: UIViewController, UICollectionViewDelegate, UICo
         let parameters : Parameters = [
             "content": content
         ]
-        print(parameters)
-        //sendQuestion(url: "query", pam: parameters)
+        typeOfAnswers.append(0)
+        answersArray.append(content)
+        collectionView.reloadData()
+        saveQuestion(pam: parameters, url: "question-user")
         return true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        timer.invalidate()
     }
 }

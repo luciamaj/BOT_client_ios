@@ -172,7 +172,6 @@
                                 <rect key="frame" x="16" y="612" width="164" height="45"/>
                                 <state key="normal" title="Talk with a programmer"/>
                                 <connections>
-                                    <action selector="goToPage:" destination="WSc-Ui-YML" eventType="touchUpInside" id="9qm-g7-x2z"/>
                                     <segue destination="7Z6-Ke-dU0" kind="show" id="2Zh-zp-pBC"/>
                                 </connections>
                             </button>
@@ -252,6 +251,10 @@
                                             <constraint firstItem="js5-J4-9At" firstAttribute="top" secondItem="Z3d-sr-bAo" secondAttribute="top" id="ixZ-Ts-MVA"/>
                                             <constraint firstAttribute="bottom" secondItem="js5-J4-9At" secondAttribute="bottom" id="jVO-BK-1sO"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="colorView" destination="js5-J4-9At" id="VMg-d0-F4v"/>
+                                            <outlet property="labelTxt" destination="QGe-Dk-tbE" id="dWA-at-GGA"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="npY-t9-Cg6" customClass="MessageCollectionViewCell" customModule="BotApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="91" width="375" height="81"/>
@@ -261,7 +264,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iv7-bs-0pL">
-                                                    <rect key="frame" x="130" y="0.0" width="245" height="80"/>
+                                                    <rect key="frame" x="130" y="0.0" width="245" height="81"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urL-QO-LGJ">
                                                             <rect key="frame" x="8" y="8" width="42" height="20"/>
@@ -335,7 +338,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yj-5S-ZU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583" y="-578"/>
+            <point key="canvasLocation" x="631" y="-579"/>
         </scene>
     </scenes>
 </document>

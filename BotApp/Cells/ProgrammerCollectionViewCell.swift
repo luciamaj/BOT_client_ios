@@ -9,5 +9,7 @@
 import UIKit
 
 class ProgrammerCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var labelTxt: UILabel!
+    @IBOutlet weak var colorView: UIView!
     
 }
