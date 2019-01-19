@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WSc-Ui-YML">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oLu-Nm-fZA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Chat View Controller-->
+        <!--Lil Noob-->
         <scene sceneID="Rug-Y1-Jvb">
             <objects>
-                <viewController id="WSc-Ui-YML" customClass="ChatViewController" customModule="BotApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Lil Noob" id="WSc-Ui-YML" customClass="ChatViewController" customModule="BotApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jv4-gC-2BU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iCh-cC-mZ2">
-                                <rect key="frame" x="0.0" y="51" width="375" height="572"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dei-tF-ckA">
                                     <size key="itemSize" width="375" height="80"/>
@@ -172,12 +172,21 @@
                             <constraint firstItem="xKp-9h-USt" firstAttribute="trailing" secondItem="QV4-yZ-Tg0" secondAttribute="trailing" constant="-27" id="Ic4-XM-hX1"/>
                             <constraint firstItem="xKp-9h-USt" firstAttribute="top" secondItem="iCh-cC-mZ2" secondAttribute="bottom" constant="-9" id="VwS-xP-KwW"/>
                             <constraint firstItem="iCh-cC-mZ2" firstAttribute="leading" secondItem="QV4-yZ-Tg0" secondAttribute="leading" id="YiD-7u-nGV"/>
-                            <constraint firstItem="iCh-cC-mZ2" firstAttribute="top" secondItem="QV4-yZ-Tg0" secondAttribute="top" constant="31" id="oUO-qr-b1e"/>
+                            <constraint firstItem="iCh-cC-mZ2" firstAttribute="top" secondItem="QV4-yZ-Tg0" secondAttribute="top" id="oUO-qr-b1e"/>
                             <constraint firstItem="iCh-cC-mZ2" firstAttribute="trailing" secondItem="QV4-yZ-Tg0" secondAttribute="trailing" id="tSc-D6-UeM"/>
                             <constraint firstItem="xKp-9h-USt" firstAttribute="bottom" secondItem="QV4-yZ-Tg0" secondAttribute="bottom" constant="-29" id="xmX-47-xpn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QV4-yZ-Tg0"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Lil Noob" id="NOQ-d5-kdH">
+                        <barButtonItem key="rightBarButtonItem" title="Talk with a Dev" style="plain" id="7dF-bt-wGF">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uSK-n3-9sS">
+                                <rect key="frame" x="257" y="7" width="102" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Talk with a dev"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="iCh-cC-mZ2" id="rR0-88-t67"/>
                         <outlet property="textField" destination="xKp-9h-USt" id="EJ6-D4-J1i"/>
@@ -185,7 +194,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMC-Y7-RpS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="424.80000000000001" y="-324.28785607196403"/>
+            <point key="canvasLocation" x="1319" y="-578"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A8P-Wf-3Hd">
+            <objects>
+                <navigationController id="oLu-Nm-fZA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nu3-yD-4u8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WSc-Ui-YML" kind="relationship" relationship="rootViewController" id="FKP-lF-kBA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9yj-5S-ZU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="583" y="-578"/>
         </scene>
     </scenes>
 </document>
