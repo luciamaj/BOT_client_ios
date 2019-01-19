@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import Keyboardy
 import SDWebImage
 import IHKeyboardAvoiding
 
@@ -41,11 +40,7 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
         KeyboardAvoiding.avoidingView = self.view
     }
     
-    public func sendQuestion(url: String, pam: Parameters) {
-        
-        print(pam)
-        print(answersArray)
-        
+    public func sendQuestion(url: String, pam: Parameters) {        
         Alamofire.request("http://localhost:8000/api/" + url, method: .post, parameters: pam).responseJSON { response in
             response.result.ifSuccess {
                 let json = JSON(response.result.value!)
@@ -134,18 +129,5 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBAction func goToPage(_ sender: Any) {
         print("i'm getting angry")
-    }
-    
-}
-
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
     }
 }

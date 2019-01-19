@@ -15,6 +15,9 @@
 		894751C921F29782009F1039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894751C721F29782009F1039 /* LaunchScreen.storyboard */; };
 		894751D421F29783009F1039 /* BotAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894751D321F29783009F1039 /* BotAppTests.swift */; };
 		894751DF21F29783009F1039 /* BotAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894751DE21F29783009F1039 /* BotAppUITests.swift */; };
+		896A2C1121F3DA0C006CCD56 /* ProgrammerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896A2C1021F3DA0C006CCD56 /* ProgrammerViewController.swift */; };
+		896A2C1321F3DCAE006CCD56 /* ProgrammerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896A2C1221F3DCAE006CCD56 /* ProgrammerCollectionViewCell.swift */; };
+		896A2C1621F3DEB1006CCD56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896A2C1521F3DEB1006CCD56 /* Extensions.swift */; };
 		89B592A821F376D1003EE686 /* BotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B592A721F376D1003EE686 /* BotCollectionViewCell.swift */; };
 		89B592AA21F3819B003EE686 /* StandardBotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B592A921F3819B003EE686 /* StandardBotCollectionViewCell.swift */; };
 		89B6443921F3633100043966 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6443821F3633100043966 /* MessageCollectionViewCell.swift */; };
@@ -54,6 +57,9 @@
 		894751DA21F29783009F1039 /* BotAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BotAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		894751DE21F29783009F1039 /* BotAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotAppUITests.swift; sourceTree = "<group>"; };
 		894751E021F29783009F1039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		896A2C1021F3DA0C006CCD56 /* ProgrammerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammerViewController.swift; sourceTree = "<group>"; };
+		896A2C1221F3DCAE006CCD56 /* ProgrammerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammerCollectionViewCell.swift; sourceTree = "<group>"; };
+		896A2C1521F3DEB1006CCD56 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		89B592A721F376D1003EE686 /* BotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotCollectionViewCell.swift; sourceTree = "<group>"; };
 		89B592A921F3819B003EE686 /* StandardBotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardBotCollectionViewCell.swift; sourceTree = "<group>"; };
 		89B6443821F3633100043966 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -130,11 +136,11 @@
 		894751BD21F2977F009F1039 /* BotApp */ = {
 			isa = PBXGroup;
 			children = (
+				896A2C1421F3DE27006CCD56 /* Cells */,
 				894751BE21F2977F009F1039 /* AppDelegate.swift */,
 				89B6443A21F3647C00043966 /* ChatViewController.swift */,
-				89B592A921F3819B003EE686 /* StandardBotCollectionViewCell.swift */,
-				89B592A721F376D1003EE686 /* BotCollectionViewCell.swift */,
-				89B6443821F3633100043966 /* MessageCollectionViewCell.swift */,
+				896A2C1021F3DA0C006CCD56 /* ProgrammerViewController.swift */,
+				896A2C1521F3DEB1006CCD56 /* Extensions.swift */,
 				894751C221F2977F009F1039 /* Main.storyboard */,
 				894751C521F29782009F1039 /* Assets.xcassets */,
 				894751C721F29782009F1039 /* LaunchScreen.storyboard */,
@@ -159,6 +165,17 @@
 				894751E021F29783009F1039 /* Info.plist */,
 			);
 			path = BotAppUITests;
+			sourceTree = "<group>";
+		};
+		896A2C1421F3DE27006CCD56 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				896A2C1221F3DCAE006CCD56 /* ProgrammerCollectionViewCell.swift */,
+				89B592A721F376D1003EE686 /* BotCollectionViewCell.swift */,
+				89B6443821F3633100043966 /* MessageCollectionViewCell.swift */,
+				89B592A921F3819B003EE686 /* StandardBotCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D200C381F07E1FD160956755 /* Pods */ = {
@@ -411,8 +428,11 @@
 				894751BF21F2977F009F1039 /* AppDelegate.swift in Sources */,
 				89B6443B21F3647C00043966 /* ChatViewController.swift in Sources */,
 				89B592A821F376D1003EE686 /* BotCollectionViewCell.swift in Sources */,
+				896A2C1621F3DEB1006CCD56 /* Extensions.swift in Sources */,
 				89B592AA21F3819B003EE686 /* StandardBotCollectionViewCell.swift in Sources */,
+				896A2C1121F3DA0C006CCD56 /* ProgrammerViewController.swift in Sources */,
 				89B6443921F3633100043966 /* MessageCollectionViewCell.swift in Sources */,
+				896A2C1321F3DCAE006CCD56 /* ProgrammerCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
