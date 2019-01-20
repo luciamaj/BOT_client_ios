@@ -21,6 +21,8 @@ class ProgrammerViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    open var estimatedItemSize: CGSize!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +36,15 @@ class ProgrammerViewController: UIViewController, UICollectionViewDelegate, UICo
         getMessages(url: "last-question")
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounting), userInfo: nil, repeats: true)
         timer.fire()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        //flowLayout.estimatedItemSize = CGSize(width: self.collectionView.frame.width, height: 100) don't show your cells
+        flowLayout.itemSize = CGSize(width: self.collectionView.frame.width, height: 100)//show your cells
+        flowLayout.invalidateLayout()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

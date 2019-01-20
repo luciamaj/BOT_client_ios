@@ -12,7 +12,7 @@ import SwiftyJSON
 import SDWebImage
 import IHKeyboardAvoiding
 
-class ChatViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
+class ChatViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -31,13 +31,20 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         textField.autocorrectionType = .no
+        self.collectionView.delegate = self
         
         self.hideKeyboardWhenTappedAround()
         self.textField.delegate = self
         KeyboardAvoiding.avoidingView = self.view
+        
+        if let flowLayout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout, let collectionView = collectionView {
+            let w = collectionView.frame.width - 20
+            flowLayout.estimatedItemSize = CGSize(width: w, height: 200)
+        }
     }
     
     public func sendQuestion(url: String, pam: Parameters) {        
