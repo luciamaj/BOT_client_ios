@@ -21,8 +21,6 @@ class ProgrammerViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    open var estimatedItemSize: CGSize!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,15 +34,11 @@ class ProgrammerViewController: UIViewController, UICollectionViewDelegate, UICo
         getMessages(url: "last-question")
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounting), userInfo: nil, repeats: true)
         timer.fire()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
-        //flowLayout.estimatedItemSize = CGSize(width: self.collectionView.frame.width, height: 100) don't show your cells
-        flowLayout.itemSize = CGSize(width: self.collectionView.frame.width, height: 100)//show your cells
-        flowLayout.invalidateLayout()
+        if let flowLayout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout, let collectionView = collectionView {
+            let w = collectionView.frame.width - 20
+            flowLayout.estimatedItemSize = CGSize(width: w, height: 200)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,6 +52,7 @@ class ProgrammerViewController: UIViewController, UICollectionViewDelegate, UICo
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MessageCollectionViewCell
             cell.colorView.layer.cornerRadius = 10
+            cell.labelMsg.text = answersArray[indexPath.row]
             
             return cell
         case 1:
@@ -97,14 +92,15 @@ class ProgrammerViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func saveQuestion(pam: Parameters, url: String) {
-        Alamofire.request("http://localhost:8000/api/" + url, method: .post).responseJSON { response in
+        Alamofire.request("http://localhost:8000/api/" + url, method: .post, parameters: pam).responseJSON { response in
             response.result.ifSuccess {
                 let json = JSON(response.result.value!)
                 print(json)
             }
             if response.result.isFailure == true {
                 print("URL", "http://localhost:8000/api/" + url)
-                print(response)
+                print(pam)
+                print("QUIII", response)
             }
         }
     }
@@ -118,6 +114,7 @@ class ProgrammerViewController: UIViewController, UICollectionViewDelegate, UICo
         let parameters : Parameters = [
             "content": content
         ]
+        print(parameters)
         typeOfAnswers.append(0)
         answersArray.append(content)
         collectionView.reloadData()

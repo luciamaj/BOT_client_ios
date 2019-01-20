@@ -29,14 +29,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="5Qe-Nx-PQ1" customClass="MessageCollectionViewCell" customModule="BotApp" customModuleProvider="target">
-                                        <rect key="frame" x="19.5" y="0.0" width="375" height="80"/>
+                                        <rect key="frame" x="19.5" y="0.0" width="375" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XdZ-ec-LkH">
-                                                    <rect key="frame" x="130" y="0.0" width="245" height="80"/>
+                                                    <rect key="frame" x="130" y="0.0" width="245" height="36"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2a-ge-glZ">
                                                             <rect key="frame" x="8" y="8" width="229" height="20"/>
@@ -47,10 +47,10 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="1" blue="0.8304081526159468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="e2a-ge-glZ" firstAttribute="top" secondItem="XdZ-ec-LkH" secondAttribute="top" constant="8" id="BVS-KW-h9l"/>
-                                                        <constraint firstAttribute="trailing" secondItem="e2a-ge-glZ" secondAttribute="trailing" constant="8" id="Tl4-aX-mYr"/>
-                                                        <constraint firstItem="e2a-ge-glZ" firstAttribute="leading" secondItem="XdZ-ec-LkH" secondAttribute="leading" constant="8" id="nr9-W4-wgL"/>
-                                                        <constraint firstAttribute="bottom" secondItem="e2a-ge-glZ" secondAttribute="bottom" constant="52" id="q7P-h7-tKO"/>
+                                                        <constraint firstItem="e2a-ge-glZ" firstAttribute="top" secondItem="XdZ-ec-LkH" secondAttribute="top" constant="8" id="089-Ll-20f"/>
+                                                        <constraint firstAttribute="trailing" secondItem="e2a-ge-glZ" secondAttribute="trailing" constant="8" id="Yng-Kr-dbN"/>
+                                                        <constraint firstAttribute="bottom" secondItem="e2a-ge-glZ" secondAttribute="bottom" constant="8" id="gti-uf-tTP"/>
+                                                        <constraint firstItem="e2a-ge-glZ" firstAttribute="leading" secondItem="XdZ-ec-LkH" secondAttribute="leading" constant="8" id="vwC-Rg-5ar"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -61,13 +61,14 @@
                                             <constraint firstAttribute="trailing" secondItem="XdZ-ec-LkH" secondAttribute="trailing" id="dtO-mi-hSq"/>
                                             <constraint firstItem="XdZ-ec-LkH" firstAttribute="top" secondItem="5Qe-Nx-PQ1" secondAttribute="top" id="gh2-4J-RGE"/>
                                         </constraints>
+                                        <size key="customSize" width="375" height="36"/>
                                         <connections>
                                             <outlet property="colorView" destination="XdZ-ec-LkH" id="VOi-YS-Pdc"/>
                                             <outlet property="labelMsg" destination="e2a-ge-glZ" id="AY6-9h-4Mp"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellBot" id="4cD-Or-K9a" customClass="BotCollectionViewCell" customModule="BotApp" customModuleProvider="target">
-                                        <rect key="frame" x="19.5" y="90" width="375" height="150"/>
+                                        <rect key="frame" x="19.5" y="46" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
@@ -114,7 +115,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="standardCellBot" id="ipq-Jv-ozb" userLabel="standardCellBot" customClass="StandardBotCollectionViewCell" customModule="BotApp" customModuleProvider="target">
-                                        <rect key="frame" x="19.5" y="250" width="375" height="80"/>
+                                        <rect key="frame" x="19.5" y="206" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
@@ -222,17 +223,17 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="programmerCell" id="Z3d-sr-bAo" customClass="ProgrammerCollectionViewCell" customModule="BotApp" customModuleProvider="target">
-                                        <rect key="frame" x="19.5" y="0.0" width="375" height="81"/>
+                                        <rect key="frame" x="19.5" y="0.0" width="375" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="js5-J4-9At">
-                                                    <rect key="frame" x="0.0" y="0.0" width="245" height="81"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="245" height="36"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGe-Dk-tbE">
-                                                            <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGe-Dk-tbE">
+                                                            <rect key="frame" x="8" y="8" width="229" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -240,9 +241,10 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="0.82562174450000003" blue="0.33347173019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QGe-Dk-tbE" secondAttribute="trailing" constant="20" symbolic="YES" id="B09-CS-Io4"/>
-                                                        <constraint firstItem="QGe-Dk-tbE" firstAttribute="leading" secondItem="js5-J4-9At" secondAttribute="leading" constant="8" id="HT2-K5-avX"/>
-                                                        <constraint firstItem="QGe-Dk-tbE" firstAttribute="top" secondItem="js5-J4-9At" secondAttribute="top" constant="8" id="nXj-O9-2GU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="QGe-Dk-tbE" secondAttribute="trailing" constant="8" id="AAo-3t-L4u"/>
+                                                        <constraint firstItem="QGe-Dk-tbE" firstAttribute="top" secondItem="js5-J4-9At" secondAttribute="top" constant="8" id="Wdb-a4-Wil"/>
+                                                        <constraint firstAttribute="bottom" secondItem="QGe-Dk-tbE" secondAttribute="bottom" constant="8" id="rMs-dM-FrT"/>
+                                                        <constraint firstItem="QGe-Dk-tbE" firstAttribute="leading" secondItem="js5-J4-9At" secondAttribute="leading" constant="8" id="tu6-a1-TYM"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -253,23 +255,24 @@
                                             <constraint firstItem="js5-J4-9At" firstAttribute="top" secondItem="Z3d-sr-bAo" secondAttribute="top" id="ixZ-Ts-MVA"/>
                                             <constraint firstAttribute="bottom" secondItem="js5-J4-9At" secondAttribute="bottom" id="jVO-BK-1sO"/>
                                         </constraints>
+                                        <size key="customSize" width="375" height="36"/>
                                         <connections>
                                             <outlet property="colorView" destination="js5-J4-9At" id="VMg-d0-F4v"/>
                                             <outlet property="labelTxt" destination="QGe-Dk-tbE" id="dWA-at-GGA"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="npY-t9-Cg6" customClass="MessageCollectionViewCell" customModule="BotApp" customModuleProvider="target">
-                                        <rect key="frame" x="19.5" y="91" width="375" height="81"/>
+                                        <rect key="frame" x="19.5" y="46" width="375" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iv7-bs-0pL">
-                                                    <rect key="frame" x="130" y="0.0" width="245" height="81"/>
+                                                    <rect key="frame" x="130" y="0.0" width="245" height="36"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urL-QO-LGJ">
-                                                            <rect key="frame" x="8" y="8" width="42" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urL-QO-LGJ">
+                                                            <rect key="frame" x="8" y="8" width="229" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -277,9 +280,10 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="1" blue="0.8304081526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="urL-QO-LGJ" firstAttribute="leading" secondItem="Iv7-bs-0pL" secondAttribute="leading" constant="8" id="16M-HB-rT4"/>
-                                                        <constraint firstItem="urL-QO-LGJ" firstAttribute="top" secondItem="Iv7-bs-0pL" secondAttribute="top" constant="8" id="ODl-AY-sLW"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="urL-QO-LGJ" secondAttribute="trailing" constant="20" symbolic="YES" id="WmM-kz-DAY"/>
+                                                        <constraint firstAttribute="trailing" secondItem="urL-QO-LGJ" secondAttribute="trailing" constant="8" id="Aaj-PI-dwo"/>
+                                                        <constraint firstItem="urL-QO-LGJ" firstAttribute="top" secondItem="Iv7-bs-0pL" secondAttribute="top" constant="8" id="DCY-Vr-iWo"/>
+                                                        <constraint firstItem="urL-QO-LGJ" firstAttribute="leading" secondItem="Iv7-bs-0pL" secondAttribute="leading" constant="8" id="U9g-OW-fZp"/>
+                                                        <constraint firstAttribute="bottom" secondItem="urL-QO-LGJ" secondAttribute="bottom" constant="8" id="iUq-op-kMv"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -290,6 +294,7 @@
                                             <constraint firstAttribute="trailing" secondItem="Iv7-bs-0pL" secondAttribute="trailing" id="j5X-3i-imx"/>
                                             <constraint firstItem="Iv7-bs-0pL" firstAttribute="leading" secondItem="npY-t9-Cg6" secondAttribute="leading" constant="130" id="yJb-8n-ggo"/>
                                         </constraints>
+                                        <size key="customSize" width="375" height="36"/>
                                         <connections>
                                             <outlet property="colorView" destination="Iv7-bs-0pL" id="8bq-vh-2Cn"/>
                                             <outlet property="labelMsg" destination="urL-QO-LGJ" id="6hs-Os-YRe"/>
@@ -324,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zpP-gj-WI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2013" y="-579"/>
+            <point key="canvasLocation" x="2011.594202898551" y="-579.24107142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="A8P-Wf-3Hd">
