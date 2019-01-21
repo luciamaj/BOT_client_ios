@@ -99,8 +99,6 @@ class ProgrammerViewController: UIViewController, UICollectionViewDelegate, UICo
             }
             if response.result.isFailure == true {
                 print("URL", "http://localhost:8000/api/" + url)
-                print(pam)
-                print("QUIII", response)
             }
         }
     }

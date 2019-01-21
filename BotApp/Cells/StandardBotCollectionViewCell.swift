@@ -13,4 +13,18 @@ class StandardBotCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var labelMsg: UILabel!
     @IBOutlet weak var btnProg: UIButton!
     @IBOutlet weak var colorView: StandardBotCollectionViewCell!
+    
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        
+        setNeedsLayout()
+        layoutIfNeeded()
+        
+        let size = colorView.systemLayoutSizeFitting(layoutAttributes.size)
+        
+        var frame = layoutAttributes.frame
+        frame.size.height = ceil(size.height)
+        layoutAttributes.frame = frame
+        
+        return layoutAttributes
+    }
 }
