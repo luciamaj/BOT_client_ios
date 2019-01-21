@@ -20,13 +20,13 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     var typeOfAnswers = [Int]()
     var answersArray = [String]()
+    var urlImg = [String]()
     
     enum typeOfAnswer : String {
         case angry = "You seem angry"
         case what = "I didn't get it"
     }
     
-    var urlImg : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,17 +55,19 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 if (json["content"] == "error") {
                     self.typeOfAnswers.append(2)
                     self.answersArray.append(typeOfAnswer.what.rawValue)
+                    self.urlImg.append("vuoto")
                     self.collectionView.reloadData()
                 }
                 else if (json["content"] == "negative") {
                     self.typeOfAnswers.append(2)
                     self.answersArray.append(typeOfAnswer.angry.rawValue)
+                    self.urlImg.append("vuoto")
                     self.collectionView.reloadData()
                 }
                 else {
                     self.typeOfAnswers.append(1)
                     self.answersArray.append(json["content"].stringValue)
-                    self.urlImg = json["filename"].stringValue
+                    self.urlImg.append(json["filename"].stringValue)
                     self.collectionView.reloadData()
                 }
             }
@@ -97,7 +99,9 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.colorView.layer.cornerRadius = 10
             cell.labelMsg.text = answersArray[indexPath.row]
             
-            cell.codeImg.sd_setImage(with: URL(string: "http://localhost:8000/uploads/" + urlImg), placeholderImage: UIImage(named: "placeholder"))
+            print(indexPath.row)
+            
+            cell.codeImg.sd_setImage(with: URL(string: "http://localhost:8000/uploads/" + urlImg[indexPath.row]), placeholderImage: UIImage(named: "placeholder"))
             
             return cell
         case 2:
@@ -129,6 +133,7 @@ class ChatViewController: UIViewController, UICollectionViewDelegate, UICollecti
         ]
         typeOfAnswers.append(0)
         answersArray.append(content)
+        self.urlImg.append("vuoto")
         collectionView.reloadData()
         sendQuestion(url: "query", pam: parameters)
         return true

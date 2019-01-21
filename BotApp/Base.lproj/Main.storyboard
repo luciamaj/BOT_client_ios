@@ -75,28 +75,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZE-12-Kps">
-                                                    <rect key="frame" x="0.0" y="0.0" width="245" height="150"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="302" height="150"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCL-Qt-pJM">
-                                                            <rect key="frame" x="8" y="8" width="229" height="20.5"/>
+                                                            <rect key="frame" x="8" y="8" width="286" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qgj-cG-ozw">
-                                                            <rect key="frame" x="8" y="36.5" width="229" height="105.5"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qgj-cG-ozw">
+                                                            <rect key="frame" x="8" y="37" width="286" height="105"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="286" id="HF0-gS-Rqf"/>
+                                                                <constraint firstAttribute="width" secondItem="Qgj-cG-ozw" secondAttribute="height" multiplier="229:105" constant="57.000000000000028" id="dhb-ap-Ont"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="0.82562174453406989" blue="0.3334717301561817" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="YCL-Qt-pJM" firstAttribute="leading" secondItem="fZE-12-Kps" secondAttribute="leading" constant="8" id="BlM-iU-Sh0"/>
+                                                        <constraint firstAttribute="trailing" secondItem="YCL-Qt-pJM" secondAttribute="trailing" constant="8" id="8iq-SO-b95"/>
+                                                        <constraint firstItem="Qgj-cG-ozw" firstAttribute="top" secondItem="YCL-Qt-pJM" secondAttribute="bottom" constant="8" id="GFa-Nv-hwu"/>
                                                         <constraint firstAttribute="trailing" secondItem="Qgj-cG-ozw" secondAttribute="trailing" constant="8" id="Gl4-mz-5HE"/>
+                                                        <constraint firstItem="YCL-Qt-pJM" firstAttribute="leading" secondItem="fZE-12-Kps" secondAttribute="leading" constant="8" id="LrX-Ia-T7S"/>
                                                         <constraint firstAttribute="bottom" secondItem="Qgj-cG-ozw" secondAttribute="bottom" constant="8" id="MaD-S7-k59"/>
-                                                        <constraint firstItem="Qgj-cG-ozw" firstAttribute="centerX" secondItem="fZE-12-Kps" secondAttribute="centerX" id="dVu-eY-vlX"/>
-                                                        <constraint firstAttribute="trailing" secondItem="YCL-Qt-pJM" secondAttribute="trailing" constant="8" id="f92-cp-sav"/>
+                                                        <constraint firstItem="YCL-Qt-pJM" firstAttribute="top" secondItem="fZE-12-Kps" secondAttribute="top" constant="8" id="SZB-hG-jFS"/>
                                                         <constraint firstItem="Qgj-cG-ozw" firstAttribute="leading" secondItem="fZE-12-Kps" secondAttribute="leading" constant="8" id="fbe-JK-7G5"/>
-                                                        <constraint firstItem="YCL-Qt-pJM" firstAttribute="top" secondItem="fZE-12-Kps" secondAttribute="top" constant="8" id="o4W-rg-upg"/>
-                                                        <constraint firstItem="Qgj-cG-ozw" firstAttribute="top" secondItem="YCL-Qt-pJM" secondAttribute="bottom" constant="8" id="qAi-2R-0pB"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -105,7 +108,7 @@
                                             <constraint firstItem="fZE-12-Kps" firstAttribute="top" secondItem="4cD-Or-K9a" secondAttribute="top" id="2pf-qJ-1gn"/>
                                             <constraint firstItem="fZE-12-Kps" firstAttribute="leading" secondItem="4cD-Or-K9a" secondAttribute="leading" id="DQg-fK-Jge"/>
                                             <constraint firstAttribute="bottom" secondItem="fZE-12-Kps" secondAttribute="bottom" id="Hx3-Hw-ucU"/>
-                                            <constraint firstAttribute="trailing" secondItem="fZE-12-Kps" secondAttribute="trailing" constant="130" id="enH-HZ-pLa"/>
+                                            <constraint firstAttribute="trailing" secondItem="fZE-12-Kps" secondAttribute="trailing" constant="73" id="enH-HZ-pLa"/>
                                         </constraints>
                                         <size key="customSize" width="375" height="150"/>
                                         <connections>
