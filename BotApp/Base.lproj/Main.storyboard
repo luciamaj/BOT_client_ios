@@ -114,14 +114,14 @@
                                             <outlet property="labelMsg" destination="YCL-Qt-pJM" id="1VT-Xk-Cef"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="standardCellBot" id="ipq-Jv-ozb" userLabel="standardCellBot" customClass="StandardBotCollectionViewCell" customModule="BotApp" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="standardCellBot" id="ipq-Jv-ozb" userLabel="standardCellBot" customClass="StandardBotCollectionViewCell" customModule="BotApp" customModuleProvider="target">
                                         <rect key="frame" x="19.5" y="206" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEw-AT-zLG" customClass="StandardBotCollectionViewCell" customModule="BotApp" customModuleProvider="target">
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEw-AT-zLG" customClass="StandardBotCollectionViewCell" customModule="BotApp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="245" height="80"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8p-Nz-0jX">
@@ -145,7 +145,7 @@
                                                         <constraint firstItem="NIp-4M-Gc9" firstAttribute="leading" secondItem="zEw-AT-zLG" secondAttribute="leading" constant="55.5" id="Gyq-Px-3sf"/>
                                                         <constraint firstItem="w8p-Nz-0jX" firstAttribute="top" secondItem="zEw-AT-zLG" secondAttribute="top" constant="8" id="JEy-nf-Ofk"/>
                                                         <constraint firstItem="NIp-4M-Gc9" firstAttribute="top" secondItem="w8p-Nz-0jX" secondAttribute="bottom" constant="6" id="Uu1-GM-HlX"/>
-                                                        <constraint firstAttribute="trailing" secondItem="NIp-4M-Gc9" secondAttribute="trailing" constant="53.5" id="Zli-mY-ybp"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NIp-4M-Gc9" secondAttribute="trailing" constant="20" symbolic="YES" id="Zli-mY-ybp"/>
                                                         <constraint firstAttribute="trailing" secondItem="w8p-Nz-0jX" secondAttribute="trailing" constant="8" id="b6v-hX-P1c"/>
                                                         <constraint firstItem="w8p-Nz-0jX" firstAttribute="leading" secondItem="zEw-AT-zLG" secondAttribute="leading" constant="8" id="gRg-sR-XFQ"/>
                                                         <constraint firstAttribute="bottom" secondItem="NIp-4M-Gc9" secondAttribute="bottom" constant="8" id="iBw-P6-i6D"/>
